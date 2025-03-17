@@ -13,10 +13,13 @@ export default function Navbar(){
                         <a className="nav-link fs-4" aria-current="page" href="#">Home</a>
                     </li>
                     <li className="nav-item border-end border-2 border-primary">
-                        <a className="nav-link fs-4" href="#">About</a>
+                        <a className="nav-link fs-4" href="#">Attendence</a>
+                    </li>
+                    <li className="nav-item border-end border-2 border-primary">
+                        <a className="nav-link fs-4" href="#">Grades</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link fs-4" href="#">Contact</a>
+                        <a className="nav-link fs-4" href="#">Announcements</a>
                     </li>
                 </ul>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
