@@ -1,9 +1,5 @@
 import Navbar from "./components/Teacher_Components/Navbar";
 import Dashboard from "./views/Teacher_Pages/Dashboard";
-
-import Navbar from "./components/Student_components/Navbar";
-import Dashboard from "./views/Student_pages/Dashboardpage";
-
 import "@/css/App.css";
 
 import UpdateGrades from "./views/Teacher_Pages/UpdateGrades";
