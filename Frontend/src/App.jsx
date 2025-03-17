@@ -1,13 +1,18 @@
-import Navbar from "./components/Teacher_Components/Navbar";
-import Dashboard from "./views/Teacher_Pages/Dashboard";
+import Navbar from "./components/Teacher_Components/Navbar"; // Teacher Navbar (Unused for now)
+import Dashboard from "./views/Teacher_Pages/Dashboard"; // Teacher Dashboard (Unused for now)
 import "@/css/App.css";
 
+// Teacher Pages (Kept for Future)
 import UpdateGrades from "./views/Teacher_Pages/UpdateGrades";
 import UpdateResources from "./views/Teacher_Pages/UpdateResources";
 import PostAnnouncements from "./views/Teacher_Pages/PostAnnouncements";
 import TakeAttendance from "./views/Teacher_Pages/TakeAttendance";
-//cms:
 
+// Student Pages (Functional)
+import StudentNavbar from "./components/Student_components/Navbar";
+import StudentDashboard from "./views/Student_Pages/DashboardPage";
+
+// CMS Pages (Admin, Parent, Student Management)
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Admin_SignUp from "./views/CMS_Pages/admin_signup";
 import Admin_LogIn from "./views/CMS_Pages/admin_login";
@@ -29,36 +34,43 @@ import Layout from "./views/CMS_Pages/Layout.jsx";
 
 export default function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/grades" element={<UpdateGrades />} />
-        <Route path="/resources" element={<UpdateResources />} />
-        <Route path="/announcements" element={<PostAnnouncements />} />
-        <Route path="/attendance" element={<TakeAttendance />} />
-        {/* prefixing with cms for now */}
-        <Route path="/cms" element={<Layout />}>
-          <Route index element={<Homepage />} />{" "}
-          <Route path="signup" element={<Admin_SignUp />} />
-          <Route path="login" element={<Admin_LogIn />} />
-          <Route path="parentcreate" element={<ParentCreate />} />
-          <Route path="parentselect" element={<ParentSelect />} />
-          <Route path="studentaccount" element={<StudentAccount />} />
-          <Route path="studentcreate" element={<StudentCreate />} />
-          <Route path="studentselect" element={<StudentSelect />} />
-          <Route path="edit-student/:studentId" element={<StudentUpdate />} />
-          <Route path="edit-parent/:parentId" element={<ParentUpdate />} />
-          <Route path="AccountSuccessful" element={<SuccessfulAccount />} />
-          <Route
-            path="AccountUpdateSuccessful"
-            element={<AccountUpdateConfirmation />}
-          />
-          <Route path="websitecreate" element={<CreateWebsitePage />} />
-          <Route path="dashboard" element={<CMS_Dashboard />} />
-          <Route path="parentmanagement" element={<ParentAccount />} />
-          <Route path="websitedesign" element={<WebsiteDesignPage />} />
-        </Route>
-      </Routes>
-    </div>
+    <Router>
+      <div className="App">
+        {/* Use Student Navbar for now */}
+        <StudentNavbar />
+
+        <Routes>
+          {/* Student Dashboard is active instead of Teacher Dashboard */}
+          <Route path="/" element={<StudentDashboard />} />
+
+          {/* Teacher Routes (Kept for Future Use) */}
+          <Route path="/teacher/dashboard" element={<Dashboard />} />
+          <Route path="/teacher/grades" element={<UpdateGrades />} />
+          <Route path="/teacher/resources" element={<UpdateResources />} />
+          <Route path="/teacher/announcements" element={<PostAnnouncements />} />
+          <Route path="/teacher/attendance" element={<TakeAttendance />} />
+
+          {/* CMS/Admin Routes */}
+          <Route path="/cms" element={<Layout />}>
+            <Route index element={<Homepage />} />
+            <Route path="signup" element={<Admin_SignUp />} />
+            <Route path="login" element={<Admin_LogIn />} />
+            <Route path="parentcreate" element={<ParentCreate />} />
+            <Route path="parentselect" element={<ParentSelect />} />
+            <Route path="studentaccount" element={<StudentAccount />} />
+            <Route path="studentcreate" element={<StudentCreate />} />
+            <Route path="studentselect" element={<StudentSelect />} />
+            <Route path="edit-student/:studentId" element={<StudentUpdate />} />
+            <Route path="edit-parent/:parentId" element={<ParentUpdate />} />
+            <Route path="AccountSuccessful" element={<SuccessfulAccount />} />
+            <Route path="AccountUpdateSuccessful" element={<AccountUpdateConfirmation />} />
+            <Route path="websitecreate" element={<CreateWebsitePage />} />
+            <Route path="dashboard" element={<CMS_Dashboard />} />
+            <Route path="parentmanagement" element={<ParentAccount />} />
+            <Route path="websitedesign" element={<WebsiteDesignPage />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
