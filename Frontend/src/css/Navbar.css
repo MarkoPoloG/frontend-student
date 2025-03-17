@@ -3,44 +3,49 @@
     width: 100%;
     padding: 10px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;  /* Ensures logo on left, links in center, and button on right */
     align-items: center;
-
     position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        left: 25%;
-        bottom: 0;
-        width: 50%;
-        height: 1px;
-        background-color: #cacaca;
-    }
 }
 
-/* Links in the center of the navbar */
-.navbar-links Button {
-    &:not(:last-of-type) {
-        margin-right: 2em;
-    }
+/* Underline effect for navbar */
+.navbar::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    width: 50%;
+    height: 1px;
+    background-color: #cacaca;
 }
 
-/* Logo on the left of the navbar */
-.logo-wrapper, .login-button-wrapper {
-    flex: 1;
+/* Centering navbar links */
+.navbar .navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;  /* Ensures it takes space to center properly */
+    text-align: center;
 }
 
+/* Space links evenly and add spacing */
+.navbar-links .nav-item {
+    margin: 0 1em;
+}
+
+/* Logo (Left-aligned) */
 .logo-wrapper {
-    height: 100%;
+    display: flex;
+    align-items: center;
 }
+
 .logo {
     height: 80px;
-    margin: auto;
     border-radius: 100%;
 }
 
-/* Login button on the right of the navbar */
+/* Right-aligned Login/Profile Button */
 .login-button-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
 }

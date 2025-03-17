@@ -15,31 +15,10 @@ export default function DashboardPage() {
   }
 
   return (
-    <div id="container" style={{ padding: "20px" }}>
-      <Navbar />
-      <div className="mx-auto bg-light rounded-bottom">
+      <div>
         <UserDetails />
+        <h3 className="h3 mt-5 text-center">Recent announcements</h3>
         <Announcements />
-        <div className="container w-100 mx-auto" style={{ marginTop: "100px" }}>
-          <div className="row">
-            <div className="col">
-              <Links type="View Grades" onSubmit={() => handleRouting("Grades")}>
-                {/* SVG Icon Here */}
-              </Links>
-            </div>
-            <div className="col">
-              <Links type="View Announcements" onSubmit={() => handleRouting("Announcements")}>
-                {/* SVG Icon Here */}
-              </Links>
-            </div>
-            <div className="col">
-              <Links type="View Attendance" onSubmit={() => handleRouting("Attendance")}>
-                {/* SVG Icon Here */}
-              </Links>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
   );
 }

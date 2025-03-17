@@ -1,7 +1,6 @@
 export default function Announcements(){
   return(
       <>
-          <h3 className="h3 mt-5 text-center">Recent announcements</h3>
           <div className="p-4 w-75 mx-auto rounded border border-primary border-2" style={{backgroundColor: 'white'}}>
           <table className="table table-striped table-hover mx-auto">
               <thead>

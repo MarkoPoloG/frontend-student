@@ -1,38 +1,32 @@
-import Announcements from "./components/Student_components/Announcements";
-import UserDetails from "./components/Student_components/UserDetails";
-import Links from "./components/Student_components/Links";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Student_components/Navbar";
-import { useNavigate } from "react-router-dom";
+import UserDetails from "./components/Student_components/UserDetails";
+import Announcements from "./components/Student_components/Announcements";
+import DashboardPage from "./views/Student_pages/DashboardPage";
+import AttendancePage from "./views/Student_pages/AttendancePage";
+import GradesPage from "./views/Student_pages/Gradespage";
+import AnnouncementsPage from "./views/Student_pages/AnnouncementsPage";
 
-
-export default function Dashboard() {
-  const navigate = useNavigate();
-  function handleRouting(type) {
-    if (type === "Grades") {
-      navigate("/grades");
-    } else if (type === "Resources") {
-      navigate("/resources");
-    } else if (type === "Announcements") {
-      navigate("/announcements");
-    } else if (type === "Attendance") {
-      navigate("/attendance");
-    }
-  }
+function App() {
   return (
-    <div id="container" style={{ padding: "20px" }}>
-      <div>
-        <Navbar />
-      </div>
+    <>
+      <Navbar />
+
+      {/* UserDetails and Announcements will always be visible */}
       <div className="mx-auto bg-light rounded-bottom">
-        <UserDetails />
-        <Announcements />
-        <div className="container w-100 mx-auto" style={{ marginTop: "100px" }}>
-          <div className="row ">
-            <div className="col">
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+
+      {/* Page Routing - Changes Below UserDetails and Announcements */}
+      <div className="container w-100 mx-auto" style={{ marginTop: "40px" }}>
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/attendance" element={<AttendancePage />} />
+          <Route path="/grades" element={<GradesPage />} />
+          <Route path="/announcements" element={<AnnouncementsPage />} />
+        </Routes>
+      </div>
+    </>
   );
 }
+
+export default App;
