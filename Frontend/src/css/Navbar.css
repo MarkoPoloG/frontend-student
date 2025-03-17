@@ -1,0 +1,46 @@
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 25%;
+        bottom: 0;
+        width: 50%;
+        height: 1px;
+        background-color: #cacaca;
+    }
+}
+
+/* Links in the center of the navbar */
+.navbar-links Button {
+    &:not(:last-of-type) {
+        margin-right: 2em;
+    }
+}
+
+/* Logo on the left of the navbar */
+.logo-wrapper, .login-button-wrapper {
+    flex: 1;
+}
+
+.logo-wrapper {
+    height: 100%;
+}
+.logo {
+    height: 80px;
+    margin: auto;
+    border-radius: 100%;
+}
+
+/* Login button on the right of the navbar */
+.login-button-wrapper {
+    display: flex;
+    justify-content: center;
+}

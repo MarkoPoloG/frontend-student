@@ -1,0 +1,196 @@
+/* Navbar for feature carousel */
+.feature-carousel-navbar {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+    
+    /* Circles */
+    .feature-index {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        cursor: pointer;
+
+        &:hover::before {
+            left: 7.5px;
+            top: 7.5px;
+            width: 45px;
+            height: 45px;
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.125));
+        }
+
+        /* Actually visible part */
+        &::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            background: linear-gradient(#f2f2f2, #73737352);
+            transition: left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease, filter 0.2s ease, background 0.2s ease;
+        }
+        
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        /* Lines in between */
+        &:not(:first-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            width: 40px;
+            height: 2px;
+            background-color: rgba(0,0,0,0.25);
+            cursor: default;
+        }
+
+        /* Active circle */
+        &.active::before {
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#999dc3 40%, #f5f6fc);
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+        }
+        &.active::after {
+            width: 30px;
+            right: calc(100% + 10px);
+        }
+        &.active +::after {
+            width: 30px;
+        }
+    }
+}
+
+/* Feature carousel */
+.feature-carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    Button {
+        position: absolute;
+        z-index: 200;
+        top: 50%;
+        translate: 0 -50%;
+        width: 25px;
+        height: 120px;
+
+        /* Triangle shape */
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;   
+            width: 0; 
+            height: 0; 
+            border-top: 60px solid transparent;
+            border-bottom: 60px solid transparent;
+            border-left: 60px solid #9EACBD;
+            border-radius: 5px;
+        }
+    }
+
+    /* Previous button */
+    .previous-feature {
+        right: calc(50% + 600px);
+        rotate: 180deg;
+    }
+
+    /* next button */
+    .next-feature {
+        left: calc(50% + 600px);
+    }
+}
+
+/* Feature preview in feature carousel */
+.feature-card {
+    box-sizing: border-box;
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(#999dc3, white);
+    border-radius: 65px;
+    filter: drop-shadow(0 7px 6px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Animation */
+    transition: scale, opacity, width, translate, margin;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+    /* Inner wrapper to avoid weird animation */
+    .inner-wrapper {
+        box-sizing: border-box;
+        width: 400px;
+        height: 300px;
+        padding: 1em;
+        display: flex;
+        scale: 1;
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    /* Current card */
+    &.active {
+        z-index: 100;
+    }
+
+    /* Invisible cards */
+    &:not(.active) {
+        width: 0;
+        scale: 0;
+        translate: 0 -50px;
+        opacity: 0;
+    }
+
+    /* All visible cards */
+    &.active, &:has(+.active), &.active +* {
+        opacity: 1;
+    }
+
+    /* Next and previous cards */
+    &:has(+.active), &.active +.feature-card {
+        width: 400px;
+        scale: 0.8;
+    }
+
+    /* Center the end ones when focused on them */
+    &:first-of-type.active {
+        margin-left: 400px;
+    }
+    &:last-of-type.active {
+        margin-right: 400px;
+    }
+
+    /* Label */
+    p {
+        font-weight: 600;
+        color: white;
+    }
+
+    /* Image */
+    .image-wrapper {
+        margin: auto;
+        width: calc(100% - 1em);
+        flex: 1;
+        overflow: hidden;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img {
+        height: 100%;
+        border-radius: 15px;
+    }
+}
