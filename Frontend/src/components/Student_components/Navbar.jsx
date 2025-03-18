@@ -7,10 +7,8 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-content">
-          {/* School Name (Logo) - Aligned Left */}
           <a className="navbar-brand" href="/">School Name</a>
 
-          {/* Navigation Links */}
           <div className="nav-links">
             <Link className="nav-link" to="/">Home</Link>
             <Link className="nav-link" to="/attendance">Attendance</Link>
@@ -18,7 +16,6 @@ export default function Navbar() {
             <Link className="nav-link" to="/announcements">Announcements</Link>
           </div>
 
-          {/* Profile Icon - Pushed to the right */}
           <div className="login-button-wrapper">
             <svg
               xmlns="http://www.w3.org/2000/svg"

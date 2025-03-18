@@ -22,8 +22,7 @@ const GradesPage = () => {
       { name: 'Oral Presentation', score: '85/100' },
     ]},
   ];
-
-  // ✅ Merge courses and group assignments by name
+  
   const mergedGrades = grades.reduce((acc, current) => {
     if (!acc[current.course]) {
       acc[current.course] = { course: current.course, assignments: {} };

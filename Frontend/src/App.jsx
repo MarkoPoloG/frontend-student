@@ -11,12 +11,8 @@ function App() {
   return (
     <>
       <Navbar />
-
-      {/* UserDetails and Announcements will always be visible */}
       <div className="mx-auto bg-light rounded-bottom">
       </div>
-
-      {/* Page Routing - Changes Below UserDetails and Announcements */}
       <div className="container w-100 mx-auto" style={{ marginTop: "40px" }}>
         <Routes>
           <Route path="/" element={<DashboardPage />} />

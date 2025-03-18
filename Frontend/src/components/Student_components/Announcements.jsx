@@ -6,8 +6,7 @@ export default function Announcements({ limit = null }) {
       { title: "Sports Day Schedule" },
       { title: "Library Closure Notice" }
     ];
-  
-    // If limit is provided, slice the array
+
     const displayedAnnouncements = limit ? announcements.slice(0, limit) : announcements;
   
     return (

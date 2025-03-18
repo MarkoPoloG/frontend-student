@@ -1,4 +1,3 @@
-// src/components/student_components/UserDetails.jsx
 export default function UserDetails() {
     return (
       <>

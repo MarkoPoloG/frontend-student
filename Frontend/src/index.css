@@ -1,7 +1,7 @@
 .checkbox-grid {
     display: grid;
-    grid-template-columns: repeat(10, 1fr); /* 10 columns */
-    gap: 10px; /* Space between the checkboxes */
+    grid-template-columns: repeat(10, 1fr); 
+    gap: 10px;
   }
   
   .form-check {
