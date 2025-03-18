@@ -6,9 +6,9 @@
 
 .snap-content {
     background-color: #ffffff;
+    border: 3px solid #198754;
     border-radius: 12px;
     margin: 20px auto;
-    max-width: 1200px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }

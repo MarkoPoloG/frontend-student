@@ -1,0 +1,56 @@
+.student-resources {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .resources-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #198754;
+    margin-bottom: 20px;
+  }
+  
+  .resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .resource-card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #198754;
+    border-radius: 12px;
+    background: #e8f5e9;
+    text-align: center;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resource-card h2 {
+    font-size: 1.5rem;
+    color: #145c32;
+  }
+  
+  .resource-card p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .resource-card a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 10px;
+    background-color: #198754;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  
+  .resource-card a:hover {
+    background-color: #145c32;
+  }
+  

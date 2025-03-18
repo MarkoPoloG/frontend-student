@@ -10,7 +10,7 @@ export default function DashboardPage() {
         <UserDetails />
       </div>
       <div className="recent-announcements-section">
-        <h3 className="h3 mt-5 text-center">Recent Announcements</h3>
+        <h3 className="h3 text-center mb-3">Recent Announcements</h3>
         <Announcements limit={3} />
       </div>
     </div>
