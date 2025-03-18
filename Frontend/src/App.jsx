@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Student_components/Navbar";
-import UserDetails from "./components/Student_components/UserDetails";
-import Announcements from "./components/Student_components/Announcements";
 import DashboardPage from "./views/Student_pages/Dashboardpage";
 import AttendancePage from "./views/Student_pages/Attendancepage";
 import GradesPage from "./views/Student_pages/Gradespage";
