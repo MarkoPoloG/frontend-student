@@ -2,7 +2,6 @@
 export default function UserDetails() {
     return (
       <>
-        <h3 className="h3 text-center mb-3" style={{ marginTop: '50px' }}>Student details</h3>
         <div className="card w-75 mx-auto p-3 border border-2 border-primary">
           <img src="./images/avatar.jpg" className="card-img-top border border-2" alt="Student Avatar" style={{ display: 'block', maxHeight: '20vh', maxWidth: '20%' }} />
           <div className="card-body">

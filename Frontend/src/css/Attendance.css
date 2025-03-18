@@ -1,85 +1,51 @@
-/* Attendance Page Container */
-.attendance-container {
+.all-elements {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page container */
+.snap-content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1200px;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Page Title */
-.title {
-    font-size: 28px;
-    color: #333;
+/* Buttons */
+.btn.link {
+    background: #198754;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Subtitle */
-.subtitle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
+.btn.link:hover {
+    background: #145c32;
 }
 
-/* Calendar Layout */
+/* Calendar */
 .calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-/* Individual Calendar Day */
-.calendar-day {
-    width: 50px;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    position: relative;
-    font-size: 14px;
-}
-
-/* Date Number */
-.date {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Status Line Indicator */
-.status-line {
     width: 100%;
-    height: 5px;
-    margin-top: 5px;
-    border-radius: 3px;
+    border-collapse: collapse;
 }
 
-/* Legend (Color Meanings) */
-.legend {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+.calendar th,
+.calendar td {
+    border: 1px solid #198754;
+    padding: 10px;
+    text-align: center;
+    background: #f8f9fa;
 }
 
-.legend-box {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    border-radius: 3px;
-}
-
-.present {
-    background-color: green;
-}
-
-.late {
-    background-color: yellow;
-}
-
-.absent {
-    background-color: red;
+/* Footer */
+.footer-dark {
+    background: #198754;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }

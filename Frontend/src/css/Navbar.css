@@ -1,51 +1,84 @@
-/* Navbar */
+/* Full-width, centered navbar */
 .navbar {
+    width: 94%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures left, center, right alignment */
+    background-color: #ffffff;
+    border-bottom: 4px solid #198754;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+/* Navbar content wrapper */
+.navbar-content {
+    display: flex;
     width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;  /* Ensures logo on left, links in center, and button on right */
     align-items: center;
-    position: relative;
+    justify-content: space-between;
 }
 
-/* Underline effect for navbar */
-.navbar::after {
-    content: '';
-    position: absolute;
-    left: 25%;
-    bottom: 0;
-    width: 50%;
-    height: 1px;
-    background-color: #cacaca;
+/* School Name (Left-aligned) */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #198754;
+    margin-left: 10px; /* Ensures it's left aligned */
 }
 
-/* Centering navbar links */
-.navbar .navbar-nav {
+/* Center Navigation Links */
+.nav-links {
     display: flex;
-    justify-content: center;
-    flex-grow: 1;  /* Ensures it takes space to center properly */
-    text-align: center;
+    gap: 30px;
+    flex-grow: 1; /* Allows nav items to expand */
+    justify-content: center; /* Centers the navigation links */
 }
 
-/* Space links evenly and add spacing */
-.navbar-links .nav-item {
-    margin: 0 1em;
+/* Individual nav items */
+.nav-link {
+    color: #198754;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
 }
 
-/* Logo (Left-aligned) */
-.logo-wrapper {
-    display: flex;
-    align-items: center;
+.nav-link:hover {
+    color: #145c32;
+    background: #e8f5e9;
 }
 
-.logo {
-    height: 80px;
-    border-radius: 100%;
-}
-
-/* Right-aligned Login/Profile Button */
+/* Profile icon wrapper (Right-aligned) */
 .login-button-wrapper {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
+    margin-left: auto; /* Pushes it to the far right */
+    padding-right: 10px;
+}
+
+/* Profile Icon */
+.bi-person-circle {
+    color: #198754;
+    cursor: pointer;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar {
+        width: 95%;
+    }
+
+    .navbar-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: center; /* Still centers on smaller screens */
+        gap: 15px;
+    }
 }

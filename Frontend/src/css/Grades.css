@@ -1,0 +1,135 @@
+/* src/css/Grades.css */
+
+.grades-container {
+    padding: 20px;
+    font-family: "Inter", sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+    border: 5px solid #198754;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.grades-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grades-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Dropdown */
+.select-container {
+    margin-bottom: 20px;
+}
+
+.select-label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+}
+
+.course-select {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 2px solid #198754;
+    background-color: #ffffff;
+    color: #333;
+    outline: none;
+}
+
+.course-select:hover {
+    border-color: #145c32;
+}
+
+/* Grades List */
+.grades-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Course Card */
+.course-card {
+    border: 2px solid #0d6efd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Title */
+.course-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Assignments Container (3 per row) */
+.assignments-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Assignment Box */
+.assignment-box {
+    padding: 15px;
+    border: 2px solid #0d6efd; /* Blue border */
+    border-radius: 8px;
+    background: #f8f9fa;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Assignment Name */
+.assignment-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Score List */
+.score-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Score */
+.score-item {
+    font-size: 1rem;
+    color: #444;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #0d6efd;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .assignments-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .assignments-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+}

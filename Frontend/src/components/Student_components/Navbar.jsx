@@ -1,43 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Add this import
+import { Link } from 'react-router-dom';
 import '../../css/Navbar.css';
 
 export default function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light rounded-top">
-        <div className="container-fluid">
-          <a className="navbar-brand fs-2" href="#">School Name</a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item border-end border-2 border-primary">
-                <Link className="nav-link fs-4" to="/">Home</Link> {/* Changed to Link */}
-              </li>
-              <li className="nav-item border-end border-2 border-primary">
-                <Link className="nav-link fs-4" to="/attendance">Attendance</Link> {/* Changed to Link, fixed typo */}
-              </li>
-              <li className="nav-item border-end border-2 border-primary">
-                <Link className="nav-link fs-4" to="/grades">Grades</Link> {/* Changed to Link */}
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link fs-4" to="/announcements">Announcements</Link> {/* Changed to Link */}
-              </li>
-            </ul>
+      <nav className="navbar">
+        <div className="navbar-content">
+          {/* School Name (Logo) - Aligned Left */}
+          <a className="navbar-brand" href="/">School Name</a>
+
+          {/* Navigation Links */}
+          <div className="nav-links">
+            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/attendance">Attendance</Link>
+            <Link className="nav-link" to="/grades">Grades</Link>
+            <Link className="nav-link" to="/announcements">Announcements</Link>
+          </div>
+
+          {/* Profile Icon - Pushed to the right */}
+          <div className="login-button-wrapper">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
+              width="30"
+              height="30"
               fill="currentColor"
               className="bi bi-person-circle"
               viewBox="0 0 16 16"
